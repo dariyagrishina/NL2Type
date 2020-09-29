@@ -65,6 +65,7 @@ to run our tool.
 ## Requirements and assumptions
 - python 2.7
 - pip2 (Tested using version 9.0.1 for python 2)
+- npm 6.14.8
 - Tested on Ubuntu 18.04.1 LTS
 
 ## Download data
@@ -84,6 +85,7 @@ pip2 install --upgrade -r requirements.txt
 ```shell
 sudo apt-get install -y nodejs
 npm install -g jsdoc
+npm install -g smartcomments
 ```
 
 ## Results and replication
@@ -118,3 +120,9 @@ python2 scripts/runner.py --config scripts/configs/demo.json
 ```
 Please ensure that the used JavaScript files have some JSDoc annotations since these will be used for extracting the natural language information used for training and testing the model.
 The predictions for the files will be data/demo/results/results.csv
+
+## Demo without JSDocs
+
+- To make predictions on some Javascript files of your own choosing without written beforehand JSDocs, using the model used in the paper, place some Javascript files in data/demo/files and then run the following command:
+```shell
+python2 scripts/runner.py --config scripts/configs/demo_without_jsdoc.json
